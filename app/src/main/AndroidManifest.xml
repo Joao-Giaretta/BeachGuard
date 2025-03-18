@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Projeto3Equipe26"
+        tools:targetApi="31">
+        <activity
+            android:name=".gerente.FinalizarLocacaoActivity"
+            android:exported="false"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.TAG_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.nfc.action.TECH_DISCOVERED"
+                android:resource="@xml/techlist" />
+        </activity>
+        <activity
+            android:name=".gerente.GerenciarArmarioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".gerente.DirecionarParaUmOuDoisClientesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".gerente.ConfirmarBothClientesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".gerente.ConfirmarClienteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".gerente.LeitorQRCodeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".cliente.MapsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".gerente.LerPulseiraActivity"
+            android:exported="false"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.TAG_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.nfc.action.TECH_DISCOVERED"
+                android:resource="@xml/techlist" />
+        </activity>
+        <activity
+            android:name=".gerente.VincularPulseiraActivity"
+            android:exported="false"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.TAG_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.nfc.action.TECH_DISCOVERED"
+                android:resource="@xml/techlist" />
+        </activity>
+        <activity
+            android:name=".gerente.DisplayBothClientImagesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".gerente.DisplayOneClientImageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".gerente.CameraPreviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".gerente.QtndPessoasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".gerente.HomeGerenteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".cliente.QRCodeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".cliente.PerfilPessoalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".cliente.CartoesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".cliente.SelecionarCartaoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".cliente.ConfirmarLocacaoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".cliente.SelecionarTempoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".cliente.SelecaoLocacaoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PagamentoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EsqueciMinhaSenhaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".cliente.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EntrarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroActivity"
+            android:exported="true" />
+        <activity
+            android:name=".gerente.DevolveInfoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LauncherActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/my_api_key" />
+    </application>
+
+</manifest>
